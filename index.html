@@ -3,153 +3,356 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aurelia Bazar · animated navbar</title>
+  <title>Aurelia Bazar · Premium eCommerce</title>
   <!-- Google Fonts: Poppins + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <!-- Font Awesome 6 (free icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  
-  <!-- ====== NAVBAR ====== -->
-  <div class="navbar-wrapper">
-    <nav class="navbar" id="mainNavbar">
-      <a href="#" class="logo">
-        <i class="fas fa-sparkle"></i> Aurelia Bazar
-      </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#" class="active">Home <span class="dot-indicator"></span></a></li>
-        <li><a href="#">Shop <span class="dot-indicator"></span></a></li>
-        <li><a href="#">Categories <span class="dot-indicator"></span></a></li>
-      </ul>
-
-      <div class="nav-icons">
-        <a href="#" aria-label="Search" id="searchIconBtn">
-          <i class="fas fa-search"></i>
+  <!-- ====== HEADER ====== -->
+  <header>
+    <div class="navbar-wrapper">
+      <nav class="navbar" id="mainNavbar">
+        <a href="#" class="logo">
+          <i class="fas fa-sparkle"></i> Aurelia Bazar
         </a>
-        <a href="#" aria-label="Cart" class="cart-wrapper">
-          <i class="fas fa-shopping-bag"></i>
-          <span class="badge">3</span>
-        </a>
-        <a href="#" aria-label="Profile"><i class="fas fa-user"></i></a>
-        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-          <i class="fas fa-bars"></i>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#" class="active">Home <span class="dot-indicator"></span></a></li>
+          <li><a href="#">Shop <span class="dot-indicator"></span></a></li>
+          <li><a href="#">Categories <span class="dot-indicator"></span></a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <a href="#" aria-label="Search" id="searchIconBtn">
+            <i class="fas fa-search"></i>
+          </a>
+          <a href="#" aria-label="Cart" class="cart-wrapper">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="badge">3</span>
+          </a>
+          <a href="#" aria-label="Profile"><i class="fas fa-user"></i></a>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== MAIN ====== -->
+  <main>
+
+    <!-- ====== SEARCH OVERLAY ====== -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search for premium essentials..." id="searchInput" autofocus />
+        <button class="close-search" id="closeSearchBtn" aria-label="Close search">
+          <i class="fas fa-times"></i>
         </button>
       </div>
-    </nav>
-  </div>
-
-  <!-- ====== SEARCH OVERLAY ====== -->
-  <div class="search-overlay" id="searchOverlay">
-    <div class="search-container">
-      <i class="fas fa-search"></i>
-      <input type="text" placeholder="Search for premium essentials..." id="searchInput" autofocus />
-      <button class="close-search" id="closeSearchBtn" aria-label="Close search">
-        <i class="fas fa-times"></i>
-      </button>
     </div>
-  </div>
 
-  <!-- ====== HERO SECTION ====== -->
-  <div class="hero-wrapper">
-    <div class="hero-container">
-      <div class="hero-grid">
-        <!-- LEFT -->
-        <div class="hero-content">
-          <span class="badge-pill"><i class="fas fa-sparkle"></i> New Collection</span>
-          <h1>
-            Let’s Shop <br />
-            <span class="highlight">All-In-One</span>
-          </h1>
-          <p class="subtext">
-            Visit Collections and follow Your Passion.
-          </p>
-          <a href="#" class="cta-btn">
-            Explore Now <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+    <!-- ====== HERO SECTION ====== -->
+    <section class="hero-wrapper">
+      <div class="hero-container">
+        <div class="hero-grid">
+          <!-- LEFT -->
+          <div class="hero-content">
+            <span class="badge-pill"><i class="fas fa-sparkle"></i> New Collection</span>
+            <h1>
+              Let’s Shop <br />
+              <span class="highlight">All-In-One</span>
+            </h1>
+            <p class="subtext">
+              Visit Collections and follow Your Passion.
+            </p>
+            <a href="#" class="cta-btn">
+              Explore Now <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
 
-        <!-- RIGHT -->
-        <div class="hero-visual">
-          <div class="visual-scene">
-            <div class="blob-circle blob-1"></div>
-            <div class="blob-circle blob-2"></div>
+          <!-- RIGHT -->
+          <div class="hero-visual">
+            <div class="visual-scene">
+              <div class="blob-circle blob-1"></div>
+              <div class="blob-circle blob-2"></div>
 
-            <div class="float-element float-bag">
-              <i class="fas fa-bag-shopping"></i>
-              <div class="info">
-                <span class="label">Leather Bag</span>
-                <span class="price">$159</span>
-              </div>
-            </div>
-
-            <div class="float-element float-sneaker">
-              <i class="fas fa-shoe-prints"></i>
-              <div class="info">
-                <span class="label">Sneakers</span>
-                <span class="price">$89</span>
-              </div>
-            </div>
-
-            <div class="float-element float-headphones">
-              <i class="fas fa-headphones-simple"></i>
-              <div class="info">
-                <span class="label">Headphones</span>
-                <span class="price">$129</span>
-              </div>
-            </div>
-
-            <div class="float-element float-price">
-              <i class="fas fa-tag"></i>
-              <span>$45.99</span>
-            </div>
-
-            <div class="phone-mockup">
-              <div class="screen">
-                <div class="status-bar">
-                  <span>9:41</span>
-                  <span>📶 🔋</span>
+              <div class="float-element float-bag">
+                <i class="fas fa-bag-shopping"></i>
+                <div class="info">
+                  <span class="label">Leather Bag</span>
+                  <span class="price">$159</span>
                 </div>
-                <div class="app-grid">
-                  <div class="app-item"><i class="fas fa-shopping-bag"></i><span>Shop</span></div>
-                  <div class="app-item"><i class="fas fa-heart"></i><span>Wish</span></div>
-                  <div class="app-item"><i class="fas fa-user"></i><span>Profile</span></div>
-                  <div class="app-item"><i class="fas fa-search"></i><span>Search</span></div>
-                  <div class="app-item"><i class="fas fa-gem"></i><span>Premium</span></div>
-                  <div class="app-item"><i class="fas fa-home"></i><span>Home</span></div>
+              </div>
+
+              <div class="float-element float-sneaker">
+                <i class="fas fa-shoe-prints"></i>
+                <div class="info">
+                  <span class="label">Sneakers</span>
+                  <span class="price">$89</span>
+                </div>
+              </div>
+
+              <div class="float-element float-headphones">
+                <i class="fas fa-headphones-simple"></i>
+                <div class="info">
+                  <span class="label">Headphones</span>
+                  <span class="price">$129</span>
+                </div>
+              </div>
+
+              <div class="float-element float-price">
+                <i class="fas fa-tag"></i>
+                <span>$45.99</span>
+              </div>
+
+              <div class="phone-mockup">
+                <div class="screen">
+                  <div class="status-bar">
+                    <span>9:41</span>
+                    <span>📶 🔋</span>
+                  </div>
+                  <div class="app-grid">
+                    <div class="app-item"><i class="fas fa-shopping-bag"></i><span>Shop</span></div>
+                    <div class="app-item"><i class="fas fa-heart"></i><span>Wish</span></div>
+                    <div class="app-item"><i class="fas fa-user"></i><span>Profile</span></div>
+                    <div class="app-item"><i class="fas fa-search"></i><span>Search</span></div>
+                    <div class="app-item"><i class="fas fa-gem"></i><span>Premium</span></div>
+                    <div class="app-item"><i class="fas fa-home"></i><span>Home</span></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ====== FLOATING SEARCH BOX ====== -->
-    <div class="search-overlay-box">
-      <div class="search-box">
-        <div class="search-input-wrap">
-          <i class="fas fa-search"></i>
-          <input type="text" placeholder="Search for products, brands and more..." />
-          <button class="mic-btn" aria-label="Voice search"><i class="fas fa-microphone"></i></button>
+      <!-- ====== FLOATING SEARCH BOX ====== -->
+      <div class="search-overlay-box">
+        <div class="search-box">
+          <div class="search-input-wrap">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search for products, brands and more..." />
+            <button class="mic-btn" aria-label="Voice search"><i class="fas fa-microphone"></i></button>
+          </div>
+
+          <div class="filter-chips">
+            <button class="chip active">Recent</button>
+            <button class="chip">Popular</button>
+            <button class="chip">Special Offers</button>
+          </div>
+
+          <button class="show-all-btn">Show All <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 12px;"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CATEGORIES SECTION ===== -->
+    <section class="categories-section">
+
+      <!-- HEADER -->
+      <div class="categories-header">
+        <h2 class="title">Explore Popular Categories</h2>
+        <a href="#" class="view-all">
+          View all <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- SCROLL WRAPPER -->
+      <div class="scroll-wrapper">
+        <div class="categories-scroll" id="categoriesScroll">
+
+          <!-- Card 1: Fashion -->
+          <div class="category-card card-fashion" data-index="0">
+            <div class="card-text">
+              <span class="cat-name">
+                Fashion<br />
+                <small>Collection</small>
+              </span>
+            </div>
+            <div class="card-visual">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Cpath d='M30 20 L35 10 L65 10 L70 20 L75 45 L70 70 L65 80 L35 80 L30 70 L25 45 Z' fill='%236C63FF' opacity='0.25'/%3E%3Cpath d='M40 25 L45 18 L55 18 L60 25 L58 40 L55 55 L45 55 L42 40 Z' fill='%236C63FF' opacity='0.4'/%3E%3Cpath d='M38 65 L42 60 L58 60 L62 65 L58 72 L42 72 Z' fill='%236C63FF' opacity='0.3'/%3E%3C/svg%3E" 
+                   alt="Handbag" class="product-img" />
+              <button class="arrow-btn" aria-label="View category">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Electronics -->
+          <div class="category-card card-electronics" data-index="1">
+            <div class="card-text">
+              <span class="cat-name">
+                Electronics<br />
+                <small>Devices</small>
+              </span>
+            </div>
+            <div class="card-visual">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Cpath d='M30 25 L35 18 L65 18 L70 25 L72 40 L70 55 L65 62 L35 62 L30 55 L28 40 Z' fill='%2348dbfb' opacity='0.3'/%3E%3Cpath d='M40 30 L45 24 L55 24 L60 30 L58 42 L55 50 L45 50 L42 42 Z' fill='%2348dbfb' opacity='0.5'/%3E%3Ccircle cx='50' cy='40' r='6' fill='%2348dbfb' opacity='0.4'/%3E%3C/svg%3E" 
+                   alt="Headphones" class="product-img" />
+              <button class="arrow-btn" aria-label="View category">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Beauty -->
+          <div class="category-card card-beauty" data-index="2">
+            <div class="card-text">
+              <span class="cat-name">
+                Beauty<br />
+                <small>Essentials</small>
+              </span>
+            </div>
+            <div class="card-visual">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Cpath d='M35 20 L40 12 L60 12 L65 20 L68 35 L65 50 L60 58 L40 58 L35 50 L32 35 Z' fill='%23f06292' opacity='0.25'/%3E%3Cpath d='M42 25 L46 18 L54 18 L58 25 L56 38 L54 46 L46 46 L44 38 Z' fill='%23f06292' opacity='0.4'/%3E%3Ccircle cx='50' cy='32' r='8' fill='%23f06292' opacity='0.2'/%3E%3C/svg%3E" 
+                   alt="Perfume" class="product-img" />
+              <button class="arrow-btn" aria-label="View category">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Home -->
+          <div class="category-card card-home" data-index="3">
+            <div class="card-text">
+              <span class="cat-name">
+                Home &amp; Decor<br />
+                <small>Living</small>
+              </span>
+            </div>
+            <div class="card-visual">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Cpath d='M20 45 L25 30 L35 22 L65 22 L75 30 L80 45 L78 60 L75 70 L65 78 L35 78 L25 70 L22 60 Z' fill='%2366bb6a' opacity='0.2'/%3E%3Cpath d='M30 40 L35 28 L42 24 L58 24 L65 28 L70 40 L68 52 L65 60 L58 66 L42 66 L35 60 L32 52 Z' fill='%2366bb6a' opacity='0.3'/%3E%3Crect x='40' y='40' width='20' height='22' rx='2' fill='%2366bb6a' opacity='0.25'/%3E%3C/svg%3E" 
+                   alt="Chair" class="product-img" />
+              <button class="arrow-btn" aria-label="View category">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5: Sports -->
+          <div class="category-card card-sports" data-index="4">
+            <div class="card-text">
+              <span class="cat-name">
+                Sports &amp; Outdoor<br />
+                <small>Active</small>
+              </span>
+            </div>
+            <div class="card-visual">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Ccircle cx='50' cy='40' r='22' fill='%23ff9800' opacity='0.2'/%3E%3Cpath d='M35 35 L45 25 L55 25 L65 35 L65 50 L55 60 L45 60 L35 50 Z' fill='%23ff9800' opacity='0.3'/%3E%3Ccircle cx='50' cy='40' r='10' fill='%23ff9800' opacity='0.25'/%3E%3C/svg%3E" 
+                   alt="Basketball" class="product-img" />
+              <button class="arrow-btn" aria-label="View category">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6: Kids -->
+          <div class="category-card card-kids" data-index="5">
+            <div class="card-text">
+              <span class="cat-name">
+                Kids<br />
+                <small>Toys &amp; More</small>
+              </span>
+            </div>
+            <div class="card-visual">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Ccircle cx='35' cy='35' r='12' fill='%236C63FF' opacity='0.2'/%3E%3Ccircle cx='65' cy='35' r='12' fill='%236C63FF' opacity='0.2'/%3E%3Cpath d='M30 55 Q50 70 70 55' stroke='%236C63FF' stroke-width='4' fill='none' opacity='0.3'/%3E%3C/svg%3E" 
+                   alt="Toys" class="product-img" />
+              <button class="arrow-btn" aria-label="View category">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SCROLL INDICATOR DOTS -->
+      <div class="scroll-indicator" id="scrollIndicator"></div>
+
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <i class="fas fa-sparkle"></i> Aurelia Bazar
+          </a>
+          <p class="footer-desc">Premium essentials for the modern soul. Curated with care, delivered with elegance.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
         </div>
 
-        <div class="filter-chips">
-          <button class="chip active">Recent</button>
-          <button class="chip">Popular</button>
-          <button class="chip">Special Offers</button>
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
         </div>
 
-        <button class="show-all-btn">Show All <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 12px;"></i></button>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+          <h4>Stay in Touch</h4>
+          <p>Subscribe for exclusive offers and updates.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aurelia Bazar. All rights reserved.</p>
+        <div class="footer-payments">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
       </div>
     </div>
-  </div>
-
+  </footer>
 
   <!-- ====== JAVASCRIPT ====== -->
   <script src="assets/js/script.js"></script>

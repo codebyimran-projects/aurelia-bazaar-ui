@@ -140,3 +140,169 @@
       }
 
     })();
+
+
+
+      (function() {
+      const scrollContainer = document.getElementById('categoriesScroll');
+      const indicator = document.getElementById('scrollIndicator');
+      const cards = scrollContainer.querySelectorAll('.category-card');
+      const totalCards = cards.length;
+
+      // ---- Create dots ----
+      for (let i = 0; i < totalCards; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', function() {
+          const index = parseInt(this.dataset.index);
+          const cardWidth = cards[0].offsetWidth + 24; // card width + gap
+          scrollContainer.scrollTo({
+            left: index * cardWidth,
+            behavior: 'smooth'
+          });
+        });
+        indicator.appendChild(dot);
+      }
+
+      const dots = indicator.querySelectorAll('.dot');
+
+      // ---- Update active dot on scroll ----
+      function updateActiveDot() {
+        const scrollLeft = scrollContainer.scrollLeft;
+        const cardWidth = cards[0].offsetWidth + 24;
+        const activeIndex = Math.round(scrollLeft / cardWidth);
+        const clampedIndex = Math.min(Math.max(activeIndex, 0), totalCards - 1);
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === clampedIndex);
+        });
+      }
+
+      scrollContainer.addEventListener('scroll', updateActiveDot);
+      window.addEventListener('resize', updateActiveDot);
+
+      // ---- Drag to scroll (grab & drag) ----
+      let isDragging = false;
+      let startX = 0;
+      let scrollLeftStart = 0;
+
+      scrollContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        scrollContainer.classList.add('active');
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeftStart = scrollContainer.scrollLeft;
+        scrollContainer.style.cursor = 'grabbing';
+        scrollContainer.style.scrollBehavior = 'auto';
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 1.2; // scroll speed multiplier
+        scrollContainer.scrollLeft = scrollLeftStart - walk;
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          scrollContainer.classList.remove('active');
+          scrollContainer.style.cursor = 'grab';
+          scrollContainer.style.scrollBehavior = 'smooth';
+          updateActiveDot();
+        }
+      });
+
+      // ---- Touch drag for mobile ----
+      let touchStartX = 0;
+      let touchScrollLeft = 0;
+
+      scrollContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].pageX - scrollContainer.offsetLeft;
+        touchScrollLeft = scrollContainer.scrollLeft;
+        scrollContainer.style.scrollBehavior = 'auto';
+      }, { passive: true });
+
+      scrollContainer.addEventListener('touchmove', (e) => {
+        const x = e.touches[0].pageX - scrollContainer.offsetLeft;
+        const walk = (x - touchStartX) * 1.2;
+        scrollContainer.scrollLeft = touchScrollLeft - walk;
+      }, { passive: true });
+
+      scrollContainer.addEventListener('touchend', () => {
+        scrollContainer.style.scrollBehavior = 'smooth';
+        updateActiveDot();
+      }, { passive: true });
+
+      // ---- Card click (with arrow button) ----
+      cards.forEach(card => {
+        const arrowBtn = card.querySelector('.arrow-btn');
+        if (arrowBtn) {
+          arrowBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const name = card.querySelector('.cat-name')?.textContent?.trim() || 'Category';
+            alert('🛍️ Exploring: ' + name);
+          });
+        }
+
+        card.addEventListener('click', function() {
+          const name = this.querySelector('.cat-name')?.textContent?.trim() || 'Category';
+          alert('🛍️ Browsing: ' + name);
+        });
+      });
+
+      // ---- View all button ----
+      document.querySelector('.view-all')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('✨ Showing all categories (demo)');
+      });
+
+      // ---- Auto-scroll animation (subtle) ----
+      let autoScrollInterval = null;
+      let isAutoScrolling = false;
+
+      function startAutoScroll() {
+        if (isAutoScrolling) return;
+        isAutoScrolling = true;
+        let index = 0;
+        autoScrollInterval = setInterval(() => {
+          const cardWidth = cards[0].offsetWidth + 24;
+          const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+          index = (index + 1) % totalCards;
+          const target = Math.min(index * cardWidth, maxScroll);
+          scrollContainer.scrollTo({
+            left: target,
+            behavior: 'smooth'
+          });
+        }, 3500);
+      }
+
+      function stopAutoScroll() {
+        if (autoScrollInterval) {
+          clearInterval(autoScrollInterval);
+          autoScrollInterval = null;
+          isAutoScrolling = false;
+        }
+      }
+
+      // Start auto-scroll after 2 seconds
+      setTimeout(startAutoScroll, 2000);
+
+      // Stop auto-scroll on user interaction
+      scrollContainer.addEventListener('mousedown', stopAutoScroll);
+      scrollContainer.addEventListener('touchstart', stopAutoScroll);
+      scrollContainer.addEventListener('mouseup', () => {
+        setTimeout(startAutoScroll, 4000);
+      });
+      scrollContainer.addEventListener('touchend', () => {
+        setTimeout(startAutoScroll, 4000);
+      });
+
+      // Reset auto-scroll on resize
+      window.addEventListener('resize', () => {
+        stopAutoScroll();
+        setTimeout(startAutoScroll, 2000);
+      });
+
+    })();
