@@ -15,34 +15,19 @@
 <body>
 
   
- 
-  <!-- ====== SEARCH OVERLAY (working) ====== -->
-  <div class="search-overlay" id="searchOverlay">
-    <div class="search-container">
-      <i class="fas fa-search"></i>
-      <input type="text" placeholder="Search for premium essentials..." id="searchInput" autofocus />
-      <button class="close-search" id="closeSearchBtn" aria-label="Close search">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- ====== NAVBAR AT TOP ====== -->
-  <header class="navbar-wrapper">
+  <!-- ====== NAVBAR ====== -->
+  <div class="navbar-wrapper">
     <nav class="navbar" id="mainNavbar">
-      <!-- LEFT: Logo -->
       <a href="#" class="logo">
         <i class="fas fa-sparkle"></i> Aurelia Bazar
       </a>
 
-      <!-- CENTER: Navigation links -->
       <ul class="nav-links" id="navLinks">
         <li><a href="#" class="active">Home <span class="dot-indicator"></span></a></li>
         <li><a href="#">Shop <span class="dot-indicator"></span></a></li>
         <li><a href="#">Categories <span class="dot-indicator"></span></a></li>
       </ul>
 
-      <!-- RIGHT: Icons + hamburger -->
       <div class="nav-icons">
         <a href="#" aria-label="Search" id="searchIconBtn">
           <i class="fas fa-search"></i>
@@ -57,9 +42,115 @@
         </button>
       </div>
     </nav>
-  </header>
+  </div>
 
-  
+  <!-- ====== SEARCH OVERLAY ====== -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search for premium essentials..." id="searchInput" autofocus />
+      <button class="close-search" id="closeSearchBtn" aria-label="Close search">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ====== HERO SECTION ====== -->
+  <div class="hero-wrapper">
+    <div class="hero-container">
+      <div class="hero-grid">
+        <!-- LEFT -->
+        <div class="hero-content">
+          <span class="badge-pill"><i class="fas fa-sparkle"></i> New Collection</span>
+          <h1>
+            Let’s Shop <br />
+            <span class="highlight">All-In-One</span>
+          </h1>
+          <p class="subtext">
+            Visit Collections and follow Your Passion.
+          </p>
+          <a href="#" class="cta-btn">
+            Explore Now <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="hero-visual">
+          <div class="visual-scene">
+            <div class="blob-circle blob-1"></div>
+            <div class="blob-circle blob-2"></div>
+
+            <div class="float-element float-bag">
+              <i class="fas fa-bag-shopping"></i>
+              <div class="info">
+                <span class="label">Leather Bag</span>
+                <span class="price">$159</span>
+              </div>
+            </div>
+
+            <div class="float-element float-sneaker">
+              <i class="fas fa-shoe-prints"></i>
+              <div class="info">
+                <span class="label">Sneakers</span>
+                <span class="price">$89</span>
+              </div>
+            </div>
+
+            <div class="float-element float-headphones">
+              <i class="fas fa-headphones-simple"></i>
+              <div class="info">
+                <span class="label">Headphones</span>
+                <span class="price">$129</span>
+              </div>
+            </div>
+
+            <div class="float-element float-price">
+              <i class="fas fa-tag"></i>
+              <span>$45.99</span>
+            </div>
+
+            <div class="phone-mockup">
+              <div class="screen">
+                <div class="status-bar">
+                  <span>9:41</span>
+                  <span>📶 🔋</span>
+                </div>
+                <div class="app-grid">
+                  <div class="app-item"><i class="fas fa-shopping-bag"></i><span>Shop</span></div>
+                  <div class="app-item"><i class="fas fa-heart"></i><span>Wish</span></div>
+                  <div class="app-item"><i class="fas fa-user"></i><span>Profile</span></div>
+                  <div class="app-item"><i class="fas fa-search"></i><span>Search</span></div>
+                  <div class="app-item"><i class="fas fa-gem"></i><span>Premium</span></div>
+                  <div class="app-item"><i class="fas fa-home"></i><span>Home</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== FLOATING SEARCH BOX ====== -->
+    <div class="search-overlay-box">
+      <div class="search-box">
+        <div class="search-input-wrap">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search for products, brands and more..." />
+          <button class="mic-btn" aria-label="Voice search"><i class="fas fa-microphone"></i></button>
+        </div>
+
+        <div class="filter-chips">
+          <button class="chip active">Recent</button>
+          <button class="chip">Popular</button>
+          <button class="chip">Special Offers</button>
+        </div>
+
+        <button class="show-all-btn">Show All <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 12px;"></i></button>
+      </div>
+    </div>
+  </div>
+
+
   <!-- ====== JAVASCRIPT ====== -->
   <script src="assets/js/script.js"></script>
 

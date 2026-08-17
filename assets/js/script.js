@@ -1,11 +1,10 @@
-// Navbar Section Code 
  (function() {
       const navbar = document.getElementById('mainNavbar');
       const hamburger = document.getElementById('hamburgerBtn');
       const navLinks = document.getElementById('navLinks');
       const links = navLinks ? navLinks.querySelectorAll('a') : [];
 
-      // ---- Search functionality ----
+      // ---- Search ----
       const searchIcon = document.getElementById('searchIconBtn');
       const searchOverlay = document.getElementById('searchOverlay');
       const closeSearchBtn = document.getElementById('closeSearchBtn');
@@ -39,7 +38,6 @@
         });
       }
 
-      // Close search on backdrop click
       if (searchOverlay) {
         searchOverlay.addEventListener('click', function(e) {
           if (e.target === searchOverlay) {
@@ -48,14 +46,25 @@
         });
       }
 
-      // Close search on Escape key
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
           closeSearch();
         }
       });
 
-      // ---- hamburger toggle ----
+      if (searchInput) {
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            const query = this.value.trim();
+            if (query) {
+              alert('🔍 Searching for: "' + query + '"');
+              closeSearch();
+            }
+          }
+        });
+      }
+
+      // ---- Hamburger ----
       if (hamburger && navLinks) {
         hamburger.addEventListener('click', function(e) {
           e.stopPropagation();
@@ -79,7 +88,7 @@
         });
       }
 
-      // ---- active link switching ----
+      // ---- Active links ----
       links.forEach(link => {
         link.addEventListener('click', function(e) {
           links.forEach(l => l.classList.remove('active'));
@@ -105,16 +114,28 @@
         }
       });
 
-      // ---- search on Enter key (demo) ----
-      if (searchInput) {
-        searchInput.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter') {
-            const query = this.value.trim();
-            if (query) {
-              alert('🔍 Searching for: "' + query + '" (demo)');
-              closeSearch();
-            }
-          }
+      // ---- Filter chips ----
+      const chips = document.querySelectorAll('.filter-chips .chip');
+      chips.forEach(chip => {
+        chip.addEventListener('click', function() {
+          chips.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      // ---- Show All button ----
+      const showAllBtn = document.querySelector('.show-all-btn');
+      if (showAllBtn) {
+        showAllBtn.addEventListener('click', function() {
+          alert('✨ Showing all products (demo)');
+        });
+      }
+
+      // ---- Mic button ----
+      const micBtn = document.querySelector('.mic-btn');
+      if (micBtn) {
+        micBtn.addEventListener('click', function() {
+          alert('🎤 Voice search activated (demo)');
         });
       }
 
