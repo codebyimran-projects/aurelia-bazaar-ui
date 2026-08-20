@@ -156,133 +156,351 @@
 
     <!-- ===== CATEGORIES SECTION ===== -->
     <section class="categories-section">
+      <div class="categories-container">
+        <!-- HEADER -->
+        <div class="categories-header">
+          <div class="title-group">
+            <div class="title-icon">
+              <i class="fas fa-th-large"></i>
+            </div>
+            <h2 class="title">Shop by <span>Category</span></h2>
+          </div>
+          <a href="#" class="see-all">
+            See all <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
 
-      <!-- HEADER -->
-      <div class="categories-header">
-        <h2 class="title">Explore Popular Categories</h2>
-        <a href="#" class="view-all">
-          View all <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-
-      <!-- SCROLL WRAPPER -->
-      <div class="scroll-wrapper">
+        <!-- SCROLL ROW -->
         <div class="categories-scroll" id="categoriesScroll">
 
-          <!-- Card 1: Fashion -->
-          <div class="category-card card-fashion" data-index="0">
-            <div class="card-text">
-              <span class="cat-name">
-                Fashion<br />
-                <small>Collection</small>
-              </span>
+          <!-- Category 1: Fashion -->
+          <div class="category-card card-fashion">
+            <span class="count-badge">42 items</span>
+            <div class="category-icon">
+              <i class="fas fa-tshirt"></i>
             </div>
-            <div class="card-visual">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Cpath d='M30 20 L35 10 L65 10 L70 20 L75 45 L70 70 L65 80 L35 80 L30 70 L25 45 Z' fill='%236C63FF' opacity='0.25'/%3E%3Cpath d='M40 25 L45 18 L55 18 L60 25 L58 40 L55 55 L45 55 L42 40 Z' fill='%236C63FF' opacity='0.4'/%3E%3Cpath d='M38 65 L42 60 L58 60 L62 65 L58 72 L42 72 Z' fill='%236C63FF' opacity='0.3'/%3E%3C/svg%3E" 
-                   alt="Handbag" class="product-img" />
-              <button class="arrow-btn" aria-label="View category">
-                <i class="fas fa-arrow-right"></i>
-              </button>
+            <div class="category-name">
+              Fashion
+              <small>Collection</small>
             </div>
+            <div class="category-image-wrap">
+              <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=100&h=100&fit=crop&crop=center&auto=format" alt="Fashion" />
+            </div>
+            <button class="arrow-btn" aria-label="Explore category">
+              <i class="fas fa-arrow-right"></i>
+            </button>
           </div>
 
-          <!-- Card 2: Electronics -->
-          <div class="category-card card-electronics" data-index="1">
-            <div class="card-text">
-              <span class="cat-name">
-                Electronics<br />
-                <small>Devices</small>
-              </span>
+          <!-- Category 2: Electronics -->
+          <div class="category-card card-electronics">
+            <span class="count-badge">38 items</span>
+            <div class="category-icon">
+              <i class="fas fa-laptop"></i>
             </div>
-            <div class="card-visual">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Cpath d='M30 25 L35 18 L65 18 L70 25 L72 40 L70 55 L65 62 L35 62 L30 55 L28 40 Z' fill='%2348dbfb' opacity='0.3'/%3E%3Cpath d='M40 30 L45 24 L55 24 L60 30 L58 42 L55 50 L45 50 L42 42 Z' fill='%2348dbfb' opacity='0.5'/%3E%3Ccircle cx='50' cy='40' r='6' fill='%2348dbfb' opacity='0.4'/%3E%3C/svg%3E" 
-                   alt="Headphones" class="product-img" />
-              <button class="arrow-btn" aria-label="View category">
-                <i class="fas fa-arrow-right"></i>
-              </button>
+            <div class="category-name">
+              Electronics
+              <small>Devices</small>
             </div>
+            <div class="category-image-wrap">
+              <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=100&h=100&fit=crop&crop=center&auto=format" alt="Electronics" />
+            </div>
+            <button class="arrow-btn" aria-label="Explore category">
+              <i class="fas fa-arrow-right"></i>
+            </button>
           </div>
 
-          <!-- Card 3: Beauty -->
-          <div class="category-card card-beauty" data-index="2">
-            <div class="card-text">
-              <span class="cat-name">
-                Beauty<br />
-                <small>Essentials</small>
-              </span>
+          <!-- Category 3: Beauty -->
+          <div class="category-card card-beauty">
+            <span class="count-badge">27 items</span>
+            <div class="category-icon">
+              <i class="fas fa-spa"></i>
             </div>
-            <div class="card-visual">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Cpath d='M35 20 L40 12 L60 12 L65 20 L68 35 L65 50 L60 58 L40 58 L35 50 L32 35 Z' fill='%23f06292' opacity='0.25'/%3E%3Cpath d='M42 25 L46 18 L54 18 L58 25 L56 38 L54 46 L46 46 L44 38 Z' fill='%23f06292' opacity='0.4'/%3E%3Ccircle cx='50' cy='32' r='8' fill='%23f06292' opacity='0.2'/%3E%3C/svg%3E" 
-                   alt="Perfume" class="product-img" />
-              <button class="arrow-btn" aria-label="View category">
-                <i class="fas fa-arrow-right"></i>
-              </button>
+            <div class="category-name">
+              Beauty
+              <small>Essentials</small>
             </div>
+            <div class="category-image-wrap">
+              <img src="https://images.unsplash.com/photo-1596462502278-6e5e4e9bf2b5?w=100&h=100&fit=crop&crop=center&auto=format" alt="Beauty" />
+            </div>
+            <button class="arrow-btn" aria-label="Explore category">
+              <i class="fas fa-arrow-right"></i>
+            </button>
           </div>
 
-          <!-- Card 4: Home -->
-          <div class="category-card card-home" data-index="3">
-            <div class="card-text">
-              <span class="cat-name">
-                Home &amp; Decor<br />
-                <small>Living</small>
-              </span>
+          <!-- Category 4: Home & Decor -->
+          <div class="category-card card-home">
+            <span class="count-badge">35 items</span>
+            <div class="category-icon">
+              <i class="fas fa-home"></i>
             </div>
-            <div class="card-visual">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Cpath d='M20 45 L25 30 L35 22 L65 22 L75 30 L80 45 L78 60 L75 70 L65 78 L35 78 L25 70 L22 60 Z' fill='%2366bb6a' opacity='0.2'/%3E%3Cpath d='M30 40 L35 28 L42 24 L58 24 L65 28 L70 40 L68 52 L65 60 L58 66 L42 66 L35 60 L32 52 Z' fill='%2366bb6a' opacity='0.3'/%3E%3Crect x='40' y='40' width='20' height='22' rx='2' fill='%2366bb6a' opacity='0.25'/%3E%3C/svg%3E" 
-                   alt="Chair" class="product-img" />
-              <button class="arrow-btn" aria-label="View category">
-                <i class="fas fa-arrow-right"></i>
-              </button>
+            <div class="category-name">
+              Home &amp; Decor
+              <small>Living</small>
             </div>
+            <div class="category-image-wrap">
+              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=100&h=100&fit=crop&crop=center&auto=format" alt="Home" />
+            </div>
+            <button class="arrow-btn" aria-label="Explore category">
+              <i class="fas fa-arrow-right"></i>
+            </button>
           </div>
 
-          <!-- Card 5: Sports -->
-          <div class="category-card card-sports" data-index="4">
-            <div class="card-text">
-              <span class="cat-name">
-                Sports &amp; Outdoor<br />
-                <small>Active</small>
-              </span>
+          <!-- Category 5: Sports -->
+          <div class="category-card card-sports">
+            <span class="count-badge">19 items</span>
+            <div class="category-icon">
+              <i class="fas fa-running"></i>
             </div>
-            <div class="card-visual">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Ccircle cx='50' cy='40' r='22' fill='%23ff9800' opacity='0.2'/%3E%3Cpath d='M35 35 L45 25 L55 25 L65 35 L65 50 L55 60 L45 60 L35 50 Z' fill='%23ff9800' opacity='0.3'/%3E%3Ccircle cx='50' cy='40' r='10' fill='%23ff9800' opacity='0.25'/%3E%3C/svg%3E" 
-                   alt="Basketball" class="product-img" />
-              <button class="arrow-btn" aria-label="View category">
-                <i class="fas fa-arrow-right"></i>
-              </button>
+            <div class="category-name">
+              Sports &amp; Outdoor
+              <small>Active</small>
             </div>
+            <div class="category-image-wrap">
+              <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=100&h=100&fit=crop&crop=center&auto=format" alt="Sports" />
+            </div>
+            <button class="arrow-btn" aria-label="Explore category">
+              <i class="fas fa-arrow-right"></i>
+            </button>
           </div>
 
-          <!-- Card 6: Kids -->
-          <div class="category-card card-kids" data-index="5">
-            <div class="card-text">
-              <span class="cat-name">
-                Kids<br />
-                <small>Toys &amp; More</small>
-              </span>
+          <!-- Category 6: Kids -->
+          <div class="category-card card-kids">
+            <span class="count-badge">23 items</span>
+            <div class="category-icon">
+              <i class="fas fa-child"></i>
             </div>
-            <div class="card-visual">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'/%3E%3Ccircle cx='35' cy='35' r='12' fill='%236C63FF' opacity='0.2'/%3E%3Ccircle cx='65' cy='35' r='12' fill='%236C63FF' opacity='0.2'/%3E%3Cpath d='M30 55 Q50 70 70 55' stroke='%236C63FF' stroke-width='4' fill='none' opacity='0.3'/%3E%3C/svg%3E" 
-                   alt="Toys" class="product-img" />
-              <button class="arrow-btn" aria-label="View category">
-                <i class="fas fa-arrow-right"></i>
-              </button>
+            <div class="category-name">
+              Kids
+              <small>Toys &amp; More</small>
             </div>
+            <div class="category-image-wrap">
+              <img src="https://images.unsplash.com/photo-1558060370-d6444d7a0de5?w=100&h=100&fit=crop&crop=center&auto=format" alt="Kids" />
+            </div>
+            <button class="arrow-btn" aria-label="Explore category">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Category 7: Food -->
+          <div class="category-card card-food">
+            <span class="count-badge">15 items</span>
+            <div class="category-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="category-name">
+              Food &amp; Drink
+              <small>Gourmet</small>
+            </div>
+            <div class="category-image-wrap">
+              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100&h=100&fit=crop&crop=center&auto=format" alt="Food" />
+            </div>
+            <button class="arrow-btn" aria-label="Explore category">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Category 8: Books -->
+          <div class="category-card card-books">
+            <span class="count-badge">31 items</span>
+            <div class="category-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <div class="category-name">
+              Books
+              <small>Reading</small>
+            </div>
+            <div class="category-image-wrap">
+              <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=100&h=100&fit=crop&crop=center&auto=format" alt="Books" />
+            </div>
+            <button class="arrow-btn" aria-label="Explore category">
+              <i class="fas fa-arrow-right"></i>
+            </button>
           </div>
 
         </div>
       </div>
+    </section>
 
-      <!-- SCROLL INDICATOR DOTS -->
-      <div class="scroll-indicator" id="scrollIndicator"></div>
+    <!-- ============================================================
+    DAILY DEALS SECTION
+    ============================================================ -->
+    <section class="daily-deals-section">
+      <div class="daily-deals-container">
 
+        <!-- HEADER -->
+        <div class="daily-deals-header">
+          <div class="title-group">
+            <div class="title-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h2 class="title">Daily <span>Deals</span></h2>
+          </div>
+          <a href="#" class="see-all">
+            See all <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- SCROLL ROW -->
+        <div class="daily-deals-scroll" id="dealsScroll">
+
+          <!-- Deal 1: Headphones -->
+          <div class="deal-card card-glow-purple">
+            <span class="discount-badge">-25%</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="far fa-heart"></i>
+            </button>
+            <div class="product-image-wrap">
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop&crop=center&auto=format" 
+                   alt="Premium Headphones" class="product-image" />
+            </div>
+            <span class="product-name">Studio Wireless Pro</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star gray"></i>
+            </div>
+            <div class="price-section">
+              <span class="product-price">$89.99</span>
+              <span class="original-price">$119.99</span>
+            </div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+          </div>
+
+          <!-- Deal 2: Sneakers -->
+          <div class="deal-card card-glow-pink">
+            <span class="discount-badge">-30%</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="far fa-heart"></i>
+            </button>
+            <div class="product-image-wrap">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=200&fit=crop&crop=center&auto=format" 
+                   alt="Premium Sneakers" class="product-image" />
+            </div>
+            <span class="product-name">Air Max Elite</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price-section">
+              <span class="product-price">$129.99</span>
+              <span class="original-price">$185.99</span>
+            </div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+          </div>
+
+          <!-- Deal 3: Smartwatch -->
+          <div class="deal-card card-glow-blue">
+            <span class="discount-badge">-20%</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="far fa-heart"></i>
+            </button>
+            <div class="product-image-wrap">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop&crop=center&auto=format" 
+                   alt="Smartwatch" class="product-image" />
+            </div>
+            <span class="product-name">Luxury Smart Series</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star gray"></i>
+            </div>
+            <div class="price-section">
+              <span class="product-price">$249.99</span>
+              <span class="original-price">$312.99</span>
+            </div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+          </div>
+
+          <!-- Deal 4: Backpack -->
+          <div class="deal-card card-glow-green">
+            <span class="discount-badge">-35%</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="far fa-heart"></i>
+            </button>
+            <div class="product-image-wrap">
+              <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop&crop=center&auto=format" 
+                   alt="Premium Backpack" class="product-image" />
+            </div>
+            <span class="product-name">Urban Explorer Pack</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price-section">
+              <span class="product-price">$59.99</span>
+              <span class="original-price">$92.99</span>
+            </div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+          </div>
+
+          <!-- Deal 5: Perfume -->
+          <div class="deal-card card-glow-orange">
+            <span class="discount-badge">-40%</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="far fa-heart"></i>
+            </button>
+            <div class="product-image-wrap">
+              <img src="https://images.unsplash.com/photo-1592919925246-d50877a9b61e?w=200&h=200&fit=crop&crop=center&auto=format" 
+                   alt="Luxury Perfume" class="product-image" />
+            </div>
+            <span class="product-name">Aurelia Noir EDP</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star gray"></i>
+            </div>
+            <div class="price-section">
+              <span class="product-price">$79.99</span>
+              <span class="original-price">$133.99</span>
+            </div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+          </div>
+
+          <!-- Deal 6: Sunglasses -->
+          <div class="deal-card card-glow-yellow">
+            <span class="discount-badge">-15%</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="far fa-heart"></i>
+            </button>
+            <div class="product-image-wrap">
+              <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop&crop=center&auto=format" 
+                   alt="Designer Sunglasses" class="product-image" />
+            </div>
+            <span class="product-name">Aviator Collection</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price-section">
+              <span class="product-price">$149.99</span>
+              <span class="original-price">$176.99</span>
+            </div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+          </div>
+
+        </div>
+      </div>
     </section>
 
   </main>
 
   <!-- ====== FOOTER ====== -->
-  <footer>
+  <footer class="footer-section">
     <div class="footer-container">
       <div class="footer-grid">
         <!-- Brand -->
@@ -356,6 +574,7 @@
 
   <!-- ====== JAVASCRIPT ====== -->
   <script src="assets/js/script.js"></script>
+  
 
 </body>
 </html>
