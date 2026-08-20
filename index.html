@@ -1,934 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aurelia Bazar · Premium eCommerce</title>
-  <!-- Google Fonts: Poppins + Inter -->
+  <title>Aurelia Bazar · The Market That Delights</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Font Awesome 6 (free icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
 
-  <!-- ====== HEADER ====== -->
-  <header>
-    <div class="navbar-wrapper">
-      <nav class="navbar" id="mainNavbar">
-        <a href="#" class="logo">
-          <i class="fas fa-sparkle"></i> Aurelia Bazar
-        </a>
+  <!-- TICKER -->
+  <div class="ticker-strip">
+    <div class="ticker-track" id="tickerTrack">
+      <span><i class="fas fa-tag"></i> FREE SHIPPING OVER $50</span>
+      <span><i class="fas fa-bolt"></i> NEW STALLS EVERY FRIDAY</span>
+      <span><i class="fas fa-gift"></i> FLASH DEALS — UP TO 40% OFF</span>
+      <span><i class="fas fa-star"></i> LOVED BY 40,000+ SHOPPERS</span>
+      <span><i class="fas fa-tag"></i> FREE SHIPPING OVER $50</span>
+      <span><i class="fas fa-bolt"></i> NEW STALLS EVERY FRIDAY</span>
+      <span><i class="fas fa-gift"></i> FLASH DEALS — UP TO 40% OFF</span>
+      <span><i class="fas fa-star"></i> LOVED BY 40,000+ SHOPPERS</span>
+    </div>
+  </div>
 
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#" class="active">Home <span class="dot-indicator"></span></a></li>
-          <li><a href="#">Shop <span class="dot-indicator"></span></a></li>
-          <li><a href="#">Categories <span class="dot-indicator"></span></a></li>
+  <!-- NAVBAR -->
+  <div class="navbar-wrapper">
+    <nav class="navbar" id="mainNavbar">
+      <a href="#" class="logo"><span class="tag-ico"><i class="fas fa-tag"></i></span> Aurelia Bazar</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#shopgrid">Shop</a></li>
+        <li><a href="#stalls">Stalls</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button aria-label="Search"><i class="fas fa-search"></i></button>
+        <div class="cart-wrap"><button aria-label="Cart"><i class="fas fa-shopping-bag"></i></button><span class="badge"
+            id="cartCount">3</span></div>
+        <button aria-label="Profile"><i class="fas fa-user"></i></button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <section class="hero">
+      <div class="hero-blob"></div>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-eyebrow"><span class="dot"></span> The market that delights</span>
+          <h1>Shop the <span class="accent">bazar</span><br />your way</h1>
+          <p class="sub">A colourful curation of premium goods from independent stalls — no two hauls the same, all the
+            finds worth telling friends about.</p>
+          <div class="cta-row">
+            <a href="#shopgrid" class="btn-primary">Explore Now <i class="fas fa-arrow-right"></i></a>
+            <a href="#stalls" class="btn-secondary"><i class="fas fa-store"></i> Browse Stalls</a>
+          </div>
+          <div class="hero-stats">
+            <div><b>120+</b><span>Curated stalls</span></div>
+            <div><b>40k</b><span>Happy shoppers</span></div>
+            <div><b>4.9★</b><span>Average rating</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop&auto=format"
+              alt="Featured product" />
+            <div class="cap">Luxury Smart Series<small>This week's favourite</small></div>
+          </div>
+          <div class="swing-tag tag-a"><span class="name">Leather Bag</span><span class="amt">$159</span></div>
+          <div class="swing-tag tag-b"><span class="name">Headphones</span><span class="amt">$129</span></div>
+          <div class="swing-tag tag-c"><span class="name">Sneakers</span><span class="amt">$89</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH -->
+    <div class="search-shelf">
+      <div class="search-box">
+        <div class="field"><i class="fas fa-search"></i><input type="text"
+            placeholder="Search stalls, products, brands…" /></div>
+        <div class="chips">
+          <button class="chip active">Recent</button>
+          <button class="chip">Popular</button>
+          <button class="chip">Special Offers</button>
+        </div>
+        <button class="go">Show All <i class="fas fa-arrow-right" style="margin-left:6px;font-size:11px;"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="stall-section reveal" id="stalls">
+    <div class="stall-header">
+      <div><span class="eyebrow">Wander the aisles</span>
+        <h2>Shop by <span>Stall</span></h2>
+      </div>
+      <a href="#" class="see-all">See all <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="stalls-scroll" id="stallsScroll">
+      <div class="stall-card c1">
+        <div class="awning"></div>
+        <div class="icon"><i class="fas fa-tshirt"></i></div>
+        <div class="name">Fashion</div>
+        <div class="count">42 items</div>
+      </div>
+      <div class="stall-card c2">
+        <div class="awning"></div>
+        <div class="icon"><i class="fas fa-laptop"></i></div>
+        <div class="name">Electronics</div>
+        <div class="count">38 items</div>
+      </div>
+      <div class="stall-card c3">
+        <div class="awning"></div>
+        <div class="icon"><i class="fas fa-spa"></i></div>
+        <div class="name">Beauty</div>
+        <div class="count">27 items</div>
+      </div>
+      <div class="stall-card c4">
+        <div class="awning"></div>
+        <div class="icon"><i class="fas fa-home"></i></div>
+        <div class="name">Home &amp; Decor</div>
+        <div class="count">35 items</div>
+      </div>
+      <div class="stall-card c5">
+        <div class="awning"></div>
+        <div class="icon"><i class="fas fa-running"></i></div>
+        <div class="name">Sports</div>
+        <div class="count">19 items</div>
+      </div>
+      <div class="stall-card c6">
+        <div class="awning"></div>
+        <div class="icon"><i class="fas fa-child"></i></div>
+        <div class="name">Kids</div>
+        <div class="count">23 items</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEALS -->
+  <section class="stall-section reveal">
+    <div class="stall-header">
+      <div><span class="eyebrow">Today only</span>
+        <h2>Daily <span>Deals</span></h2>
+      </div>
+      <a href="#" class="see-all">See all <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="deals-scroll" id="dealsScroll">
+      <div class="deal-card">
+        <span class="swing-badge">-25%</span>
+        <button class="wish"><i class="far fa-heart"></i></button>
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop&auto=format"
+            alt="Headphones" /></div>
+        <div class="pname">Studio Wireless Pro</div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star"></i><i class="fas fa-star off"></i></div>
+        <div class="price-row"><span class="price">$89.99</span><span class="was">$119.99</span></div>
+        <button class="add-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+      <div class="deal-card">
+        <span class="swing-badge">-30%</span>
+        <button class="wish"><i class="far fa-heart"></i></button>
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=200&fit=crop&auto=format"
+            alt="Sneakers" /></div>
+        <div class="pname">Air Max Elite</div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="price-row"><span class="price">$129.99</span><span class="was">$185.99</span></div>
+        <button class="add-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+      <div class="deal-card">
+        <span class="swing-badge">-20%</span>
+        <button class="wish"><i class="far fa-heart"></i></button>
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop&auto=format"
+            alt="Smartwatch" /></div>
+        <div class="pname">Luxury Smart Series</div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star"></i><i class="fas fa-star off"></i></div>
+        <div class="price-row"><span class="price">$249.99</span><span class="was">$312.99</span></div>
+        <button class="add-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+      <div class="deal-card">
+        <span class="swing-badge">-35%</span>
+        <button class="wish"><i class="far fa-heart"></i></button>
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop&auto=format"
+            alt="Backpack" /></div>
+        <div class="pname">Urban Explorer Pack</div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="price-row"><span class="price">$59.99</span><span class="was">$92.99</span></div>
+        <button class="add-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+      <div class="deal-card">
+        <span class="swing-badge">-40%</span>
+        <button class="wish"><i class="far fa-heart"></i></button>
+        <div class="img-wrap"><img
+            src="assets/images/perfume.jfif"
+            alt="Perfume" /></div>
+        <div class="pname">Aurelia Noir EDP</div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star"></i><i class="fas fa-star off"></i></div>
+        <div class="price-row"><span class="price">$79.99</span><span class="was">$133.99</span></div>
+        <button class="add-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+      <div class="deal-card">
+        <span class="swing-badge">-15%</span>
+        <button class="wish"><i class="far fa-heart"></i></button>
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop&auto=format"
+            alt="Sunglasses" /></div>
+        <div class="pname">Aviator Collection</div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="price-row"><span class="price">$149.99</span><span class="was">$176.99</span></div>
+        <button class="add-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP GRID -->
+  <section class="stall-section reveal" id="shopgrid">
+    <div class="stall-header">
+      <div><span class="eyebrow">The full haul</span>
+        <h2>Shop <span>Collection</span></h2>
+      </div>
+      <a href="#" class="see-all">View All <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="shop-grid">
+      <div class="shop-card">
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=500&fit=crop&auto=format"
+            alt="Denim Jacket" /></div><span class="sticker">-25%</span><button class="wish"><i
+            class="far fa-heart"></i></button>
+        <div class="overlay">
+          <div class="pname">Premium Denim Jacket</div>
+          <div class="price-row"><span class="price">$89.99</span><span class="was">$119.99</span></div>
+        </div><button class="add-btn"><i class="fas fa-plus"></i> Add</button>
+      </div>
+      <div class="shop-card">
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=500&fit=crop&auto=format"
+            alt="Headphones" /></div><span class="sticker">-30%</span><button class="wish"><i
+            class="far fa-heart"></i></button>
+        <div class="overlay">
+          <div class="pname">Wireless Headphones</div>
+          <div class="price-row"><span class="price">$149.99</span><span class="was">$199.99</span></div>
+        </div><button class="add-btn"><i class="fas fa-plus"></i> Add</button>
+      </div>
+      <div class="shop-card">
+        <div class="img-wrap"><img
+            src="assets/images/perfume.jfif"
+            alt="Perfume" /></div><span class="sticker">-20%</span><button class="wish"><i
+            class="far fa-heart"></i></button>
+        <div class="overlay">
+          <div class="pname">Luxury Eau de Parfum</div>
+          <div class="price-row"><span class="price">$79.99</span><span class="was">$99.99</span></div>
+        </div><button class="add-btn"><i class="fas fa-plus"></i> Add</button>
+      </div>
+      <div class="shop-card">
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=500&fit=crop&auto=format"
+            alt="Desk Lamp" /></div><span class="sticker">-15%</span><button class="wish"><i
+            class="far fa-heart"></i></button>
+        <div class="overlay">
+          <div class="pname">Modern Desk Lamp</div>
+          <div class="price-row"><span class="price">$59.99</span><span class="was">$69.99</span></div>
+        </div><button class="add-btn"><i class="fas fa-plus"></i> Add</button>
+      </div>
+      <div class="shop-card">
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=500&fit=crop&auto=format"
+            alt="Sneakers" /></div><span class="sticker">-40%</span><button class="wish"><i
+            class="far fa-heart"></i></button>
+        <div class="overlay">
+          <div class="pname">Running Sneakers</div>
+          <div class="price-row"><span class="price">$89.99</span><span class="was">$149.99</span></div>
+        </div><button class="add-btn"><i class="fas fa-plus"></i> Add</button>
+      </div>
+      <div class="shop-card">
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=500&fit=crop&auto=format"
+            alt="Sunglasses" /></div><span class="sticker">-25%</span><button class="wish"><i
+            class="far fa-heart"></i></button>
+        <div class="overlay">
+          <div class="pname">Aviator Sunglasses</div>
+          <div class="price-row"><span class="price">$129.99</span><span class="was">$169.99</span></div>
+        </div><button class="add-btn"><i class="fas fa-plus"></i> Add</button>
+      </div>
+      <div class="shop-card">
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=500&fit=crop&auto=format"
+            alt="Watch" /></div><span class="sticker">-35%</span><button class="wish"><i
+            class="far fa-heart"></i></button>
+        <div class="overlay">
+          <div class="pname">Luxury Smartwatch</div>
+          <div class="price-row"><span class="price">$249.99</span><span class="was">$379.99</span></div>
+        </div><button class="add-btn"><i class="fas fa-plus"></i> Add</button>
+      </div>
+      <div class="shop-card">
+        <div class="img-wrap"><img
+            src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=500&fit=crop&auto=format"
+            alt="Backpack" /></div><span class="sticker">-20%</span><button class="wish"><i
+            class="far fa-heart"></i></button>
+        <div class="overlay">
+          <div class="pname">Travel Backpack</div>
+          <div class="price-row"><span class="price">$69.99</span><span class="was">$87.99</span></div>
+        </div><button class="add-btn"><i class="fas fa-plus"></i> Add</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO TICKET -->
+  <section class="ticket reveal">
+    <div class="ticket-inner">
+      <div class="ticket-divider"></div>
+      <div class="ticket-content">
+        <span class="eyebrow"><i class="fas fa-bolt" style="color:#FFC94D;"></i> Limited-time raffle</span>
+        <h2>Summer Sale<br /><span class="hl">Up to 50% off</span></h2>
+        <p>Grab your ticket to the biggest stall-wide sale of the season, before the tent comes down.</p>
+        <div class="timer" id="timer">
+          <div class="block"><b id="hh">24</b><span>Hours</span></div>
+          <div class="block"><b id="mm">00</b><span>Minutes</span></div>
+          <div class="block"><b id="ss">00</b><span>Seconds</span></div>
+        </div>
+        <div class="cta-row">
+          <a href="#" class="btn-primary">Shop Now <i class="fas fa-arrow-right"></i></a>
+          <a href="#" class="btn-secondary"
+            style="background:transparent;border-color:rgba(255,255,255,0.3);color:#fff;"><i
+              class="fas fa-play-circle"></i> View Collection</a>
+        </div>
+      </div>
+      <div class="ticket-visual">
+        <div class="disc"><img
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop&auto=format"
+            alt="Featured" /></div>
+        <div class="price-pop">$149 <small>$299</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="stall-section reveal">
+    <div class="stall-header" style="justify-content:center; text-align:center; flex-direction:column;">
+      <span class="eyebrow">Why shop with us</span>
+      <h2>Why Choose <span>Aurelia</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card w1">
+        <div class="icon"><i class="fas fa-gem"></i></div>
+        <h3>Premium Quality</h3>
+        <p>Curated collections from the finest independent makers, vetted stall by stall.</p>
+      </div>
+      <div class="why-card w2">
+        <div class="icon"><i class="fas fa-rocket"></i></div>
+        <h3>Fast Delivery</h3>
+        <p>Lightning-fast shipping with live tracking, so you're never left waiting.</p>
+      </div>
+      <div class="why-card w3">
+        <div class="icon"><i class="fas fa-lock"></i></div>
+        <h3>Secure Payments</h3>
+        <p>Encrypted checkout with every major payment method, always safe.</p>
+      </div>
+      <div class="why-card w4">
+        <div class="icon"><i class="fas fa-headset"></i></div>
+        <h3>24/7 Support</h3>
+        <p>A real human at the stall door, day or night, ready to help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="news-ticket reveal">
+    <div class="news-inner">
+      <div class="news-content">
+        <h2>Join the <span class="hl">Bazar Club</span></h2>
+        <p>Get 10% off your first haul, plus first dibs on new stalls and flash raffles.</p>
+      </div>
+      <form class="news-form" id="newsletterForm">
+        <div class="row">
+          <input type="email" placeholder="you@example.com" required />
+          <button type="submit">Join <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <p class="fine">No spam, ever — just the good stuff. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-lights">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><i class="fas fa-tag" style="color:#FF5C8A;"></i> Aurelia Bazar</div>
+        <p>Premium finds for the curious shopper. Curated with care, delivered with a smile.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Sale</a></li>
+          <li><a href="#">Gift Cards</a></li>
         </ul>
-
-        <div class="nav-icons">
-          <a href="#" aria-label="Search" id="searchIconBtn">
-            <i class="fas fa-search"></i>
-          </a>
-          <a href="#" aria-label="Cart" class="cart-wrapper">
-            <i class="fas fa-shopping-bag"></i>
-            <span class="badge">3</span>
-          </a>
-          <a href="#" aria-label="Profile"><i class="fas fa-user"></i></a>
-          <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ====== MAIN ====== -->
-  <main>
-
-    <!-- ====== SEARCH OVERLAY ====== -->
-    <div class="search-overlay" id="searchOverlay">
-      <div class="search-container">
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search for premium essentials..." id="searchInput" autofocus />
-        <button class="close-search" id="closeSearchBtn" aria-label="Close search">
-          <i class="fas fa-times"></i>
-        </button>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
       </div>
     </div>
-
-    <!-- ====== HERO SECTION ====== -->
-    <section class="hero-wrapper">
-      <div class="hero-container">
-        <div class="hero-grid">
-          <!-- LEFT -->
-          <div class="hero-content">
-            <span class="badge-pill"><i class="fas fa-sparkle"></i> New Collection</span>
-            <h1>
-              Let’s Shop <br />
-              <span class="highlight">All-In-One</span>
-            </h1>
-            <p class="subtext">
-              Visit Collections and follow Your Passion.
-            </p>
-            <a href="#" class="cta-btn">
-              Explore Now <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <!-- RIGHT -->
-          <div class="hero-visual">
-            <div class="visual-scene">
-              <div class="blob-circle blob-1"></div>
-              <div class="blob-circle blob-2"></div>
-
-              <div class="float-element float-bag">
-                <i class="fas fa-bag-shopping"></i>
-                <div class="info">
-                  <span class="label">Leather Bag</span>
-                  <span class="price">$159</span>
-                </div>
-              </div>
-
-              <div class="float-element float-sneaker">
-                <i class="fas fa-shoe-prints"></i>
-                <div class="info">
-                  <span class="label">Sneakers</span>
-                  <span class="price">$89</span>
-                </div>
-              </div>
-
-              <div class="float-element float-headphones">
-                <i class="fas fa-headphones-simple"></i>
-                <div class="info">
-                  <span class="label">Headphones</span>
-                  <span class="price">$129</span>
-                </div>
-              </div>
-
-              <div class="float-element float-price">
-                <i class="fas fa-tag"></i>
-                <span>$45.99</span>
-              </div>
-
-              <div class="phone-mockup">
-                <div class="screen">
-                  <div class="status-bar">
-                    <span>9:41</span>
-                    <span>📶 🔋</span>
-                  </div>
-                  <div class="app-grid">
-                    <div class="app-item"><i class="fas fa-shopping-bag"></i><span>Shop</span></div>
-                    <div class="app-item"><i class="fas fa-heart"></i><span>Wish</span></div>
-                    <div class="app-item"><i class="fas fa-user"></i><span>Profile</span></div>
-                    <div class="app-item"><i class="fas fa-search"></i><span>Search</span></div>
-                    <div class="app-item"><i class="fas fa-gem"></i><span>Premium</span></div>
-                    <div class="app-item"><i class="fas fa-home"></i><span>Home</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ====== FLOATING SEARCH BOX ====== -->
-      <div class="search-overlay-box">
-        <div class="search-box">
-          <div class="search-input-wrap">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search for products, brands and more..." />
-            <button class="mic-btn" aria-label="Voice search"><i class="fas fa-microphone"></i></button>
-          </div>
-
-          <div class="filter-chips">
-            <button class="chip active">Recent</button>
-            <button class="chip">Popular</button>
-            <button class="chip">Special Offers</button>
-          </div>
-
-          <button class="show-all-btn">Show All <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 12px;"></i></button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CATEGORIES SECTION ===== -->
-    <section class="categories-section">
-      <div class="categories-container">
-        <!-- HEADER -->
-        <div class="categories-header">
-          <div class="title-group">
-            <div class="title-icon">
-              <i class="fas fa-th-large"></i>
-            </div>
-            <h2 class="title">Shop by <span>Category</span></h2>
-          </div>
-          <a href="#" class="see-all">
-            See all <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <!-- SCROLL ROW -->
-        <div class="categories-scroll" id="categoriesScroll">
-
-          <!-- Category 1: Fashion -->
-          <div class="category-card card-fashion">
-            <span class="count-badge">42 items</span>
-            <div class="category-icon">
-              <i class="fas fa-tshirt"></i>
-            </div>
-            <div class="category-name">
-              Fashion
-              <small>Collection</small>
-            </div>
-            <div class="category-image-wrap">
-              <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=100&h=100&fit=crop&crop=center&auto=format" alt="Fashion" />
-            </div>
-            <button class="arrow-btn" aria-label="Explore category">
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-          <!-- Category 2: Electronics -->
-          <div class="category-card card-electronics">
-            <span class="count-badge">38 items</span>
-            <div class="category-icon">
-              <i class="fas fa-laptop"></i>
-            </div>
-            <div class="category-name">
-              Electronics
-              <small>Devices</small>
-            </div>
-            <div class="category-image-wrap">
-              <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=100&h=100&fit=crop&crop=center&auto=format" alt="Electronics" />
-            </div>
-            <button class="arrow-btn" aria-label="Explore category">
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-          <!-- Category 3: Beauty -->
-          <div class="category-card card-beauty">
-            <span class="count-badge">27 items</span>
-            <div class="category-icon">
-              <i class="fas fa-spa"></i>
-            </div>
-            <div class="category-name">
-              Beauty
-              <small>Essentials</small>
-            </div>
-            <div class="category-image-wrap">
-              <img src="https://images.unsplash.com/photo-1596462502278-6e5e4e9bf2b5?w=100&h=100&fit=crop&crop=center&auto=format" alt="Beauty" />
-            </div>
-            <button class="arrow-btn" aria-label="Explore category">
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-          <!-- Category 4: Home & Decor -->
-          <div class="category-card card-home">
-            <span class="count-badge">35 items</span>
-            <div class="category-icon">
-              <i class="fas fa-home"></i>
-            </div>
-            <div class="category-name">
-              Home &amp; Decor
-              <small>Living</small>
-            </div>
-            <div class="category-image-wrap">
-              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=100&h=100&fit=crop&crop=center&auto=format" alt="Home" />
-            </div>
-            <button class="arrow-btn" aria-label="Explore category">
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-          <!-- Category 5: Sports -->
-          <div class="category-card card-sports">
-            <span class="count-badge">19 items</span>
-            <div class="category-icon">
-              <i class="fas fa-running"></i>
-            </div>
-            <div class="category-name">
-              Sports &amp; Outdoor
-              <small>Active</small>
-            </div>
-            <div class="category-image-wrap">
-              <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=100&h=100&fit=crop&crop=center&auto=format" alt="Sports" />
-            </div>
-            <button class="arrow-btn" aria-label="Explore category">
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-          <!-- Category 6: Kids -->
-          <div class="category-card card-kids">
-            <span class="count-badge">23 items</span>
-            <div class="category-icon">
-              <i class="fas fa-child"></i>
-            </div>
-            <div class="category-name">
-              Kids
-              <small>Toys &amp; More</small>
-            </div>
-            <div class="category-image-wrap">
-              <img src="https://images.unsplash.com/photo-1558060370-d6444d7a0de5?w=100&h=100&fit=crop&crop=center&auto=format" alt="Kids" />
-            </div>
-            <button class="arrow-btn" aria-label="Explore category">
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-          <!-- Category 7: Food -->
-          <div class="category-card card-food">
-            <span class="count-badge">15 items</span>
-            <div class="category-icon">
-              <i class="fas fa-utensils"></i>
-            </div>
-            <div class="category-name">
-              Food &amp; Drink
-              <small>Gourmet</small>
-            </div>
-            <div class="category-image-wrap">
-              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100&h=100&fit=crop&crop=center&auto=format" alt="Food" />
-            </div>
-            <button class="arrow-btn" aria-label="Explore category">
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-          <!-- Category 8: Books -->
-          <div class="category-card card-books">
-            <span class="count-badge">31 items</span>
-            <div class="category-icon">
-              <i class="fas fa-book-open"></i>
-            </div>
-            <div class="category-name">
-              Books
-              <small>Reading</small>
-            </div>
-            <div class="category-image-wrap">
-              <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=100&h=100&fit=crop&crop=center&auto=format" alt="Books" />
-            </div>
-            <button class="arrow-btn" aria-label="Explore category">
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    DAILY DEALS SECTION
-    ============================================================ -->
-    <section class="daily-deals-section">
-      <div class="daily-deals-container">
-
-        <!-- HEADER -->
-        <div class="daily-deals-header">
-          <div class="title-group">
-            <div class="title-icon">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <h2 class="title">Daily <span>Deals</span></h2>
-          </div>
-          <a href="#" class="see-all">
-            See all <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <!-- SCROLL ROW -->
-        <div class="daily-deals-scroll" id="dealsScroll">
-
-          <!-- Deal 1: Headphones -->
-          <div class="deal-card card-glow-purple">
-            <span class="discount-badge">-25%</span>
-            <button class="wishlist-btn" aria-label="Add to wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <div class="product-image-wrap">
-              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop&crop=center&auto=format" 
-                   alt="Premium Headphones" class="product-image" />
-            </div>
-            <span class="product-name">Studio Wireless Pro</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star gray"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$89.99</span>
-              <span class="original-price">$119.99</span>
-            </div>
-            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
-          </div>
-
-          <!-- Deal 2: Sneakers -->
-          <div class="deal-card card-glow-pink">
-            <span class="discount-badge">-30%</span>
-            <button class="wishlist-btn" aria-label="Add to wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <div class="product-image-wrap">
-              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=200&fit=crop&crop=center&auto=format" 
-                   alt="Premium Sneakers" class="product-image" />
-            </div>
-            <span class="product-name">Air Max Elite</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$129.99</span>
-              <span class="original-price">$185.99</span>
-            </div>
-            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
-          </div>
-
-          <!-- Deal 3: Smartwatch -->
-          <div class="deal-card card-glow-blue">
-            <span class="discount-badge">-20%</span>
-            <button class="wishlist-btn" aria-label="Add to wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <div class="product-image-wrap">
-              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop&crop=center&auto=format" 
-                   alt="Smartwatch" class="product-image" />
-            </div>
-            <span class="product-name">Luxury Smart Series</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star gray"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$249.99</span>
-              <span class="original-price">$312.99</span>
-            </div>
-            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
-          </div>
-
-          <!-- Deal 4: Backpack -->
-          <div class="deal-card card-glow-green">
-            <span class="discount-badge">-35%</span>
-            <button class="wishlist-btn" aria-label="Add to wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <div class="product-image-wrap">
-              <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop&crop=center&auto=format" 
-                   alt="Premium Backpack" class="product-image" />
-            </div>
-            <span class="product-name">Urban Explorer Pack</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$59.99</span>
-              <span class="original-price">$92.99</span>
-            </div>
-            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
-          </div>
-
-          <!-- Deal 5: Perfume -->
-          <div class="deal-card card-glow-orange">
-            <span class="discount-badge">-40%</span>
-            <button class="wishlist-btn" aria-label="Add to wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <div class="product-image-wrap">
-              <img src="https://images.unsplash.com/photo-1592919925246-d50877a9b61e?w=200&h=200&fit=crop&crop=center&auto=format" 
-                   alt="Luxury Perfume" class="product-image" />
-            </div>
-            <span class="product-name">Aurelia Noir EDP</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star gray"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$79.99</span>
-              <span class="original-price">$133.99</span>
-            </div>
-            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
-          </div>
-
-          <!-- Deal 6: Sunglasses -->
-          <div class="deal-card card-glow-yellow">
-            <span class="discount-badge">-15%</span>
-            <button class="wishlist-btn" aria-label="Add to wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <div class="product-image-wrap">
-              <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop&crop=center&auto=format" 
-                   alt="Designer Sunglasses" class="product-image" />
-            </div>
-            <span class="product-name">Aviator Collection</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$149.99</span>
-              <span class="original-price">$176.99</span>
-            </div>
-            <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  <!-- ============================================================
-  SHOP SECTION - FULL IMAGE CARDS
-  ============================================================ -->
-  <section class="shop-section">
-    <div class="shop-container">
-
-      <!-- HEADER -->
-      <div class="shop-header">
-        <div class="title-group">
-          <div class="title-icon">
-            <i class="fas fa-store"></i>
-          </div>
-          <h2 class="title">Shop <span>Collection</span></h2>
-        </div>
-        <a href="#" class="see-all">
-          View All <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-
-      <!-- GRID -->
-      <div class="shop-grid">
-
-        <!-- Card 1: Fashion -->
-        <div class="shop-card">
-          <div class="image-wrap">
-            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=500&fit=crop&crop=center&auto=format" alt="Fashion" />
-          </div>
-          <span class="discount-badge">-25%</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-            <i class="far fa-heart"></i>
-          </button>
-          <div class="card-overlay">
-            <span class="product-name">Premium Denim Jacket</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$89.99</span>
-              <span class="original-price">$119.99</span>
-            </div>
-          </div>
-          <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
-        </div>
-
-        <!-- Card 2: Electronics -->
-        <div class="shop-card">
-          <div class="image-wrap">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=500&fit=crop&crop=center&auto=format" alt="Headphones" />
-          </div>
-          <span class="discount-badge">-30%</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-            <i class="far fa-heart"></i>
-          </button>
-          <div class="card-overlay">
-            <span class="product-name">Wireless Headphones</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star gray"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$149.99</span>
-              <span class="original-price">$199.99</span>
-            </div>
-          </div>
-          <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
-        </div>
-
-        <!-- Card 3: Beauty -->
-        <div class="shop-card">
-          <div class="image-wrap">
-            <img src="https://images.unsplash.com/photo-1592919925246-d50877a9b61e?w=400&h=500&fit=crop&crop=center&auto=format" alt="Perfume" />
-          </div>
-          <span class="discount-badge">-20%</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-            <i class="far fa-heart"></i>
-          </button>
-          <div class="card-overlay">
-            <span class="product-name">Luxury Eau de Parfum</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$79.99</span>
-              <span class="original-price">$99.99</span>
-            </div>
-          </div>
-          <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
-        </div>
-
-        <!-- Card 4: Home -->
-        <div class="shop-card">
-          <div class="image-wrap">
-            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=500&fit=crop&crop=center&auto=format" alt="Home Decor" />
-          </div>
-          <span class="discount-badge">-15%</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-            <i class="far fa-heart"></i>
-          </button>
-          <div class="card-overlay">
-            <span class="product-name">Modern Desk Lamp</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star gray"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$59.99</span>
-              <span class="original-price">$69.99</span>
-            </div>
-          </div>
-          <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
-        </div>
-
-        <!-- Card 5: Sports -->
-        <div class="shop-card">
-          <div class="image-wrap">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=500&fit=crop&crop=center&auto=format" alt="Sneakers" />
-          </div>
-          <span class="discount-badge">-40%</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-            <i class="far fa-heart"></i>
-          </button>
-          <div class="card-overlay">
-            <span class="product-name">Running Sneakers</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$89.99</span>
-              <span class="original-price">$149.99</span>
-            </div>
-          </div>
-          <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
-        </div>
-
-        <!-- Card 6: Accessories -->
-        <div class="shop-card">
-          <div class="image-wrap">
-            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=500&fit=crop&crop=center&auto=format" alt="Sunglasses" />
-          </div>
-          <span class="discount-badge">-25%</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-            <i class="far fa-heart"></i>
-          </button>
-          <div class="card-overlay">
-            <span class="product-name">Aviator Sunglasses</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star gray"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$129.99</span>
-              <span class="original-price">$169.99</span>
-            </div>
-          </div>
-          <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
-        </div>
-
-        <!-- Card 7: Watch -->
-        <div class="shop-card">
-          <div class="image-wrap">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=500&fit=crop&crop=center&auto=format" alt="Watch" />
-          </div>
-          <span class="discount-badge">-35%</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-            <i class="far fa-heart"></i>
-          </button>
-          <div class="card-overlay">
-            <span class="product-name">Luxury Smartwatch</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$249.99</span>
-              <span class="original-price">$379.99</span>
-            </div>
-          </div>
-          <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
-        </div>
-
-        <!-- Card 8: Backpack -->
-        <div class="shop-card">
-          <div class="image-wrap">
-            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=500&fit=crop&crop=center&auto=format" alt="Backpack" />
-          </div>
-          <span class="discount-badge">-20%</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-            <i class="far fa-heart"></i>
-          </button>
-          <div class="card-overlay">
-            <span class="product-name">Travel Backpack</span>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star gray"></i>
-            </div>
-            <div class="price-section">
-              <span class="product-price">$69.99</span>
-              <span class="original-price">$87.99</span>
-            </div>
-          </div>
-          <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-    <!-- ============================================================
-  PROMO BANNER
-  ============================================================ -->
-  <section class="promo-banner">
-
-    <!-- Decorative Shapes -->
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-
-    <!-- LEFT: Content -->
-    <div class="promo-content">
-      <span class="badge">
-        <i class="fas fa-bolt"></i> Limited Time Offer
-      </span>
-
-      <h2>
-        Summer Sale <br />
-        <span class="highlight">Up to 50% Off</span>
-      </h2>
-
-      <p>
-        Discover premium essentials at unbeatable prices. Don't miss out on our exclusive summer collection.
-      </p>
-
-      <!-- Timer -->
-      <div class="promo-timer" id="timer">
-        <div class="time-block">
-          <div class="number" id="hours">24</div>
-          <div class="label">Hours</div>
-        </div>
-        <div class="time-block">
-          <div class="number" id="minutes">00</div>
-          <div class="label">Minutes</div>
-        </div>
-        <div class="time-block">
-          <div class="number" id="seconds">00</div>
-          <div class="label">Seconds</div>
-        </div>
-      </div>
-
-      <!-- CTA Buttons -->
-      <div class="cta-group">
-        <a href="#" class="btn-primary">
-          Shop Now <i class="fas fa-arrow-right"></i>
-        </a>
-        <a href="#" class="btn-secondary">
-          <i class="fas fa-play-circle"></i> View Collection
-        </a>
-      </div>
-    </div>
-
-    <!-- RIGHT: Visual -->
-    <div class="promo-visual">
-      <div class="image-wrap">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop&crop=center&auto=format" 
-             alt="Product" />
-        <div class="price-tag">
-          $149 <small>$299</small>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-
-    <!-- ============================================================
-  WHY CHOOSE US SECTION
-  ============================================================ -->
-  <section class="why-section">
-    <div class="why-container">
-
-      <!-- HEADER -->
-      <div class="why-header">
-        <span class="badge"><i class="fas fa-sparkle"></i> Why Aurelia</span>
-        <h2>Why Choose <span>Us</span></h2>
-        <p>We deliver premium quality with exceptional service, making every shopping experience unforgettable.</p>
-      </div>
-
-      <!-- GRID -->
-      <div class="why-grid">
-
-        <!-- Card 1: Premium Quality -->
-        <div class="why-card card-1">
-          <div class="icon-wrap">
-            <i class="fas fa-gem"></i>
-          </div>
-          <h3>Premium Quality</h3>
-          <p>Curated collections from the finest brands, ensuring every product meets our highest standards.</p>
-        </div>
-
-        <!-- Card 2: Fast Delivery -->
-        <div class="why-card card-2">
-          <div class="icon-wrap">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h3>Fast Delivery</h3>
-          <p>Lightning-fast shipping with real-time tracking, so you never wait longer than necessary.</p>
-        </div>
-
-        <!-- Card 3: Secure Payments -->
-        <div class="why-card card-3">
-          <div class="icon-wrap">
-            <i class="fas fa-lock"></i>
-          </div>
-          <h3>Secure Payments</h3>
-          <p>State-of-the-art encryption and multiple payment options for a safe, hassle-free checkout.</p>
-        </div>
-
-        <!-- Card 4: 24/7 Support -->
-        <div class="why-card card-4">
-          <div class="icon-wrap">
-            <i class="fas fa-headset"></i>
-          </div>
-          <h3>24/7 Support</h3>
-          <p>Dedicated customer service team available around the clock to assist with any queries.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  </main>
-
-  <!-- ====== FOOTER ====== -->
-  <footer class="footer-section">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <!-- Brand -->
-        <div class="footer-brand">
-          <a href="#" class="footer-logo">
-            <i class="fas fa-sparkle"></i> Aurelia Bazar
-          </a>
-          <p class="footer-desc">Premium essentials for the modern soul. Curated with care, delivered with elegance.</p>
-          <div class="footer-social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-pinterest"></i></a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-links">
-          <h4>Shop</h4>
-          <ul>
-            <li><a href="#">New Arrivals</a></li>
-            <li><a href="#">Best Sellers</a></li>
-            <li><a href="#">Sale</a></li>
-            <li><a href="#">Gift Cards</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Returns</a></li>
-            <li><a href="#">Shipping</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <!-- Newsletter -->
-        <div class="footer-newsletter">
-          <h4>Stay in Touch</h4>
-          <p>Subscribe for exclusive offers and updates.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" />
-            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="footer-bottom">
-        <p>&copy; 2026 Aurelia Bazar. All rights reserved.</p>
-        <div class="footer-payments">
-          <i class="fab fa-cc-visa"></i>
-          <i class="fab fa-cc-mastercard"></i>
-          <i class="fab fa-cc-paypal"></i>
-          <i class="fab fa-cc-apple-pay"></i>
-        </div>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Aurelia Bazar. All rights reserved.</p>
+      <div class="pay"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i
+          class="fab fa-cc-paypal"></i><i class="fab fa-cc-apple-pay"></i></div>
     </div>
   </footer>
 
-  <!-- ====== JAVASCRIPT ====== -->
   <script src="assets/js/script.js"></script>
-  
-
 </body>
+
 </html>
