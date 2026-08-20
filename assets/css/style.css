@@ -2541,3 +2541,517 @@ body {
   border-radius: 40px;
   backdrop-filter: blur(2px);
 }
+
+    /* ============================================================
+       SHOP SECTION - FULL IMAGE CARDS
+    ============================================================ */
+    .shop-section {
+      max-width: 1200px;
+      margin-top: 40px !important;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 40px;
+      padding: 50px 40px 60px 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.02), 0 8px 24px rgba(0, 0, 0, 0.01);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+    .shop-section::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(108, 99, 255, 0.03) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .shop-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ----- HEADER ----- */
+    .shop-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      padding: 0 4px;
+    }
+
+    .shop-header .title-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .shop-header .title-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #6C63FF, #8B83F0);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+      box-shadow: 0 8px 28px rgba(108, 99, 255, 0.2);
+    }
+
+    .shop-header .title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #1E1E1E;
+      letter-spacing: -0.5px;
+    }
+
+    .shop-header .title span {
+      background: linear-gradient(135deg, #6C63FF, #8B83F0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .shop-header .see-all {
+      font-family: 'Inter', 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #777;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      padding: 10px 22px;
+      border-radius: 40px;
+      background: #F5F6FA;
+      border: 1px solid transparent;
+    }
+
+    .shop-header .see-all i {
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .shop-header .see-all:hover {
+      color: #6C63FF;
+      background: rgba(108, 99, 255, 0.04);
+      border-color: rgba(108, 99, 255, 0.1);
+      transform: translateX(2px);
+    }
+
+    .shop-header .see-all:hover i {
+      transform: translateX(4px);
+    }
+
+    /* ----- GRID LAYOUT (4 columns) ----- */
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    /* ============================================================
+       SHOP CARD - FULL IMAGE PREMIUM
+    ============================================================ */
+    .shop-card {
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.01);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      aspect-ratio: 1 / 1.2;
+      background: #fff;
+    }
+
+    .shop-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.02);
+      border-color: rgba(108, 99, 255, 0.08);
+    }
+
+    .shop-card:active {
+      transform: scale(0.96);
+    }
+
+    /* ----- Image Container (Full Cover) ----- */
+    .shop-card .image-wrap {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: #f0f2f8;
+    }
+
+    .shop-card .image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      filter: brightness(0.95);
+    }
+
+    .shop-card:hover .image-wrap img {
+      transform: scale(1.06);
+      filter: brightness(1);
+    }
+
+    /* ----- Overlay (Dark gradient) ----- */
+    .shop-card .card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 18px 22px 18px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      height: 60%;
+      transition: all 0.4s ease;
+    }
+
+    /* ----- Discount Badge ----- */
+    .shop-card .discount-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: linear-gradient(135deg, #ff6b6b, #ff4757);
+      padding: 5px 14px;
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+      z-index: 3;
+      box-shadow: 0 4px 16px rgba(255, 71, 87, 0.2);
+    }
+
+    /* ----- Wishlist Heart ----- */
+    .shop-card .wishlist-btn {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      z-index: 3;
+    }
+
+    .shop-card .wishlist-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ff4757;
+      transform: scale(1.1);
+    }
+
+    /* ----- Product Name ----- */
+    .shop-card .product-name {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 4px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ----- Rating ----- */
+    .shop-card .rating {
+      display: flex;
+      gap: 2px;
+      font-size: 12px;
+      color: #feca57;
+      margin-bottom: 4px;
+    }
+
+    .shop-card .rating .gray {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ----- Price Section ----- */
+    .shop-card .price-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .shop-card .product-price {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .shop-card .original-price {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: line-through;
+    }
+
+    /* ----- Add to Cart Button (Visible on hover) ----- */
+    .shop-card .add-to-cart {
+      position: absolute;
+      bottom: 22px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 40px;
+      color: #ffffff;
+      font-family: 'Inter', 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 3;
+      opacity: 0;
+      transform: translateY(10px);
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .shop-card:hover .add-to-cart {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .shop-card .add-to-cart:hover {
+      background: #6C63FF;
+      border-color: #6C63FF;
+      box-shadow: 0 8px 24px rgba(108, 99, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    .shop-card .add-to-cart i {
+      font-size: 11px;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media screen and (max-width: 1024px) {
+      .shop-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .shop-section {
+        padding: 36px 20px 48px 20px;
+        border-radius: 32px;
+      }
+
+      .shop-header .title {
+        font-size: 22px;
+      }
+
+      .shop-header .title-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 14px;
+      }
+
+      .shop-header .see-all {
+        font-size: 13px;
+        padding: 8px 16px;
+      }
+
+      .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .shop-card .product-name {
+        font-size: 14px;
+      }
+
+      .shop-card .product-price {
+        font-size: 17px;
+      }
+
+      .shop-card .original-price {
+        font-size: 12px;
+      }
+
+      .shop-card .discount-badge {
+        font-size: 10px;
+        padding: 4px 12px;
+        top: 12px;
+        left: 12px;
+      }
+
+      .shop-card .wishlist-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+        top: 10px;
+        right: 12px;
+      }
+
+      .shop-card .add-to-cart {
+        font-size: 11px;
+        padding: 6px 14px;
+        bottom: 18px;
+        right: 14px;
+      }
+
+      .shop-card .card-overlay {
+        padding: 16px 14px 18px 14px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      .shop-section {
+        padding: 28px 16px 40px 16px;
+        border-radius: 28px;
+      }
+
+      .shop-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .shop-header .title {
+        font-size: 20px;
+      }
+
+      .shop-header .title-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        border-radius: 12px;
+      }
+
+      .shop-header .see-all {
+        font-size: 12px;
+        padding: 6px 14px;
+      }
+
+      .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .shop-card .product-name {
+        font-size: 13px;
+      }
+
+      .shop-card .product-price {
+        font-size: 15px;
+      }
+
+      .shop-card .original-price {
+        font-size: 11px;
+      }
+
+      .shop-card .discount-badge {
+        font-size: 9px;
+        padding: 3px 10px;
+        top: 10px;
+        left: 10px;
+      }
+
+      .shop-card .wishlist-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+        top: 8px;
+        right: 10px;
+      }
+
+      .shop-card .rating {
+        font-size: 10px;
+      }
+
+      .shop-card .add-to-cart {
+        font-size: 10px;
+        padding: 5px 12px;
+        bottom: 14px;
+        right: 10px;
+      }
+
+      .shop-card .card-overlay {
+        padding: 12px 12px 14px 12px;
+      }
+    }
+
+    @media screen and (max-width: 380px) {
+      .shop-grid {
+        gap: 12px;
+      }
+
+      .shop-card .product-name {
+        font-size: 11px;
+      }
+
+      .shop-card .product-price {
+        font-size: 13px;
+      }
+
+      .shop-card .original-price {
+        font-size: 10px;
+      }
+
+      .shop-card .discount-badge {
+        font-size: 8px;
+        padding: 2px 8px;
+        top: 8px;
+        left: 8px;
+      }
+
+      .shop-card .wishlist-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+        top: 6px;
+        right: 8px;
+      }
+
+      .shop-card .add-to-cart {
+        font-size: 9px;
+        padding: 4px 10px;
+        bottom: 10px;
+        right: 8px;
+      }
+
+      .shop-card .card-overlay {
+        padding: 10px 10px 12px 10px;
+      }
+
+      .shop-card .rating {
+        font-size: 9px;
+      }
+    }

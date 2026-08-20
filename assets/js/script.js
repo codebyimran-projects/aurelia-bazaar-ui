@@ -397,3 +397,60 @@
   }
 
 })();
+
+
+// shop collection 
+ (function() {
+      // Wishlist toggle
+      document.querySelectorAll('.shop-card .wishlist-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const icon = this.querySelector('i');
+          if (icon.classList.contains('far')) {
+            icon.classList.remove('far');
+            icon.classList.add('fas');
+            this.style.color = '#ff4757';
+            this.style.background = 'rgba(255,71,87,0.2)';
+          } else {
+            icon.classList.remove('fas');
+            icon.classList.add('far');
+            this.style.color = '#fff';
+            this.style.background = 'rgba(255,255,255,0.15)';
+          }
+        });
+      });
+
+      // Add to Cart
+      document.querySelectorAll('.shop-card .add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const card = this.closest('.shop-card');
+          const name = card.querySelector('.product-name')?.textContent || 'Product';
+          alert('🛒 Added to cart: ' + name);
+          this.innerHTML = '<i class="fas fa-check"></i> Added';
+          this.style.background = '#00b894';
+          this.style.borderColor = '#00b894';
+          setTimeout(() => {
+            this.innerHTML = '<i class="fas fa-plus"></i> Add';
+            this.style.background = 'rgba(255,255,255,0.15)';
+            this.style.borderColor = 'rgba(255,255,255,0.1)';
+          }, 2000);
+        });
+      });
+
+      // Card click
+      document.querySelectorAll('.shop-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+          if (e.target.closest('button')) return;
+          const name = this.querySelector('.product-name')?.textContent || 'Product';
+          alert('🛍️ Viewing: ' + name);
+        });
+      });
+
+      // View All
+      document.querySelector('.shop-header .see-all')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('✨ Showing all products (demo)');
+      });
+
+    })();
