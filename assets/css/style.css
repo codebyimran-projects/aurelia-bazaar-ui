@@ -3055,3 +3055,462 @@ body {
         font-size: 9px;
       }
     }
+
+        /* ============================================================
+       PROMO BANNER
+    ============================================================ */
+    .promo-banner {
+      max-width: 1200px;
+      width: 100%;
+      border-radius: 40px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      padding: 50px 60px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    /* Decorative elements */
+    .promo-banner::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(108, 99, 255, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .promo-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 107, 107, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* ----- Floating shapes ----- */
+    .promo-banner .shape {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0.04;
+    }
+
+    .promo-banner .shape-1 {
+      width: 200px;
+      height: 200px;
+      background: #6C63FF;
+      top: -60px;
+      left: 20%;
+      animation: floatShape 8s ease-in-out infinite;
+    }
+
+    .promo-banner .shape-2 {
+      width: 150px;
+      height: 150px;
+      background: #ff6b6b;
+      bottom: -40px;
+      right: 25%;
+      animation: floatShape 10s ease-in-out infinite reverse;
+    }
+
+    .promo-banner .shape-3 {
+      width: 100px;
+      height: 100px;
+      background: #feca57;
+      top: 50%;
+      right: 10%;
+      animation: floatShape 6s ease-in-out infinite 1s;
+    }
+
+    @keyframes floatShape {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.1); }
+    }
+
+    /* ----- Content ----- */
+    .promo-content {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+    }
+
+    .promo-content .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .promo-content .badge i {
+      margin-right: 6px;
+      color: #feca57;
+    }
+
+    .promo-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      max-width: 500px;
+    }
+
+    .promo-content h2 .highlight {
+      background: linear-gradient(135deg, #feca57, #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .promo-content p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 12px;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+
+    .promo-content .cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .promo-content .btn-primary {
+      background: linear-gradient(135deg, #6C63FF, #8B83F0);
+      color: white;
+      border: none;
+      padding: 14px 34px;
+      border-radius: 40px;
+      font-family: 'Inter', 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 28px rgba(108, 99, 255, 0.2);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .promo-content .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(108, 99, 255, 0.3);
+    }
+
+    .promo-content .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-family: 'Inter', 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .promo-content .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    /* ----- Timer ----- */
+    .promo-timer {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .promo-timer .time-block {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 8px 14px;
+      border-radius: 16px;
+      min-width: 60px;
+    }
+
+    .promo-timer .time-block .number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .promo-timer .time-block .label {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    /* ----- Right Side - Visual ----- */
+    .promo-visual {
+      position: relative;
+      z-index: 2;
+      flex: 0 0 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .promo-visual .image-wrap {
+      width: 260px;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .promo-visual .image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.2));
+      animation: floatProduct 4s ease-in-out infinite;
+    }
+
+    @keyframes floatProduct {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-12px) rotate(2deg); }
+    }
+
+    /* Floating price tag */
+    .promo-visual .price-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(135deg, #ff6b6b, #ff4757);
+      padding: 8px 16px;
+      border-radius: 40px;
+      color: white;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 8px 28px rgba(255, 71, 87, 0.2);
+      animation: pulseTag 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseTag {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .promo-visual .price-tag small {
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.8;
+      text-decoration: line-through;
+      margin-left: 6px;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media screen and (max-width: 1024px) {
+      .promo-banner {
+        padding: 40px 40px;
+        min-height: 280px;
+      }
+
+      .promo-content h2 {
+        font-size: 34px;
+        max-width: 400px;
+      }
+
+      .promo-visual {
+        flex: 0 0 220px;
+      }
+
+      .promo-visual .image-wrap {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    @media screen and (max-width: 820px) {
+      .promo-banner {
+        flex-direction: column;
+        padding: 40px 30px;
+        text-align: center;
+        min-height: auto;
+        gap: 24px;
+      }
+
+      .promo-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .promo-content h2 {
+        max-width: 100%;
+        font-size: 30px;
+      }
+
+      .promo-content p {
+        max-width: 100%;
+      }
+
+      .promo-content .cta-group {
+        justify-content: center;
+      }
+
+      .promo-timer {
+        justify-content: center;
+      }
+
+      .promo-visual {
+        flex: 0 0 auto;
+      }
+
+      .promo-visual .image-wrap {
+        width: 180px;
+        height: 180px;
+      }
+
+      .promo-visual .price-tag {
+        font-size: 16px;
+        padding: 6px 14px;
+        top: -10px;
+        right: -10px;
+      }
+
+      .promo-banner .shape {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      .promo-banner {
+        border-radius: 28px;
+        padding: 30px 20px;
+      }
+
+      .promo-content h2 {
+        font-size: 24px;
+      }
+
+      .promo-content .badge {
+        font-size: 10px;
+        padding: 4px 12px;
+      }
+
+      .promo-content .btn-primary {
+        padding: 12px 24px;
+        font-size: 13px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .promo-content .btn-secondary {
+        padding: 12px 20px;
+        font-size: 13px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .promo-content .cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .promo-timer {
+        gap: 10px;
+      }
+
+      .promo-timer .time-block {
+        padding: 6px 10px;
+        min-width: 50px;
+      }
+
+      .promo-timer .time-block .number {
+        font-size: 22px;
+      }
+
+      .promo-timer .time-block .label {
+        font-size: 9px;
+      }
+
+      .promo-visual .image-wrap {
+        width: 140px;
+        height: 140px;
+      }
+
+      .promo-visual .price-tag {
+        font-size: 14px;
+        padding: 4px 12px;
+        top: -8px;
+        right: -8px;
+      }
+
+      .promo-visual .price-tag small {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width: 380px) {
+      .promo-content h2 {
+        font-size: 20px;
+      }
+
+      .promo-visual .image-wrap {
+        width: 110px;
+        height: 110px;
+      }
+
+      .promo-visual .price-tag {
+        font-size: 12px;
+        padding: 3px 10px;
+      }
+
+      .promo-timer .time-block {
+        min-width: 40px;
+        padding: 4px 8px;
+      }
+
+      .promo-timer .time-block .number {
+        font-size: 18px;
+      }
+    }

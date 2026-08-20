@@ -454,3 +454,49 @@
       });
 
     })();
+
+
+
+
+    // promo section 
+       (function() {
+      // Set timer to 24 hours from now
+      let timer = 24 * 60 * 60; // 24 hours in seconds
+
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      function updateTimer() {
+        const h = Math.floor(timer / 3600);
+        const m = Math.floor((timer % 3600) / 60);
+        const s = timer % 60;
+
+        hoursEl.textContent = String(h).padStart(2, '0');
+        minutesEl.textContent = String(m).padStart(2, '0');
+        secondsEl.textContent = String(s).padStart(2, '0');
+
+        if (timer > 0) {
+          timer--;
+        } else {
+          timer = 24 * 60 * 60; // Reset to 24 hours
+        }
+      }
+
+      updateTimer();
+      setInterval(updateTimer, 1000);
+
+      // ============================================================
+      // BUTTON INTERACTIONS
+      // ============================================================
+      document.querySelector('.promo-content .btn-primary')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('🛒 Starting your shopping experience!');
+      });
+
+      document.querySelector('.promo-content .btn-secondary')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('✨ Showing all collections (demo)');
+      });
+
+    })();
