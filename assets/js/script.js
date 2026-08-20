@@ -500,3 +500,14 @@
       });
 
     })();
+
+    // why choose us 
+        (function() {
+      // Card click interaction
+      document.querySelectorAll('.why-card').forEach(card => {
+        card.addEventListener('click', function() {
+          const title = this.querySelector('h3')?.textContent || 'Feature';
+          alert('✨ Learn more about: ' + title);
+        });
+      });
+    })();
